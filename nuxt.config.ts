@@ -7,5 +7,10 @@ export default defineNuxtConfig({
     config: {
       stylistic: true
     }
+  },
+  content: {
+    highlight: {
+      theme: 'github-light'
+    }
   }
 })
