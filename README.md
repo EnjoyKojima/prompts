@@ -1,75 +1,94 @@
-# Nuxt Minimal Starter
+# Prompts Webアプリ要件定義書
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 1. プロジェクト概要
 
-## Setup
+### 基本情報
+- **目的**: Claude Codeのプロンプト・サブエージェント定義コードの公開・共有など
+- **ターゲットユーザー**: 開発者（一般公開）
+- **コンテンツ管理者**: 個人運営
 
-Make sure to install dependencies:
+## 2. 技術仕様
 
-```bash
-# npm
-npm install
+### 技術スタック
+- **フレームワーク**: Nuxt 4
+- **コンテンツ管理**: Nuxt Content
+- **UIライブラリ**: Nuxt UI
+- **データ管理**: Markdownファイル
+- **スタイリング**: ダークモード対応
 
-# pnpm
-pnpm install
+## 3. 機能要件
 
-# yarn
-yarn install
+### 3.1 コンテンツ構造
+各記事は以下の情報を含む：
+- タイトル
+- 本文（プロンプト/コード含む）
+- タグ（複数可）
+- カテゴリ
+- 公開日時
 
-# bun
-bun install
-```
+### 3.2 主要機能
 
-## Development Server
+#### 閲覧機能
+- **一覧表示**: gitmoji.dev風のグリッドレイアウト
+- **カテゴリフィルタ**: カテゴリ別にコンテンツを絞り込み
+- **タグ検索**: タグによる記事の検索
+- **ソート機能**: 公開日時での並び替え
+- **お気に入り機能**: Cookieを使用した記事のお気に入り保存
 
-Start the development server on `http://localhost:3000`:
+#### コピー機能
+- 各コードブロックに個別のコピーボタンを設置
+- Nuxt Contentのデフォルト機能を活用
 
-```bash
-# npm
-npm run dev
+### 3.3 ページ構成
 
-# pnpm
-pnpm dev
+#### トップページ
+- グリッド形式での記事一覧表示
+- カテゴリ/タグフィルタ
+- ソート機能
+- お気に入り表示切り替え
 
-# yarn
-yarn dev
+#### 記事詳細ページ
+- ヘッダー
+- 記事本文（Markdown形式）
+- コードブロック（コピーボタン付き）
 
-# bun
-bun run dev
-```
+## 4. デザイン要件
 
-## Production
+### UI/UX
+- **レイアウト**: gitmoji.dev風のグリッドデザイン
+- **テーマ**: ダークモード対応
+- **レスポンシブ**: モバイル対応必須
+- **UIコンポーネント**: Nuxt UI使用
 
-Build the application for production:
+### ビジュアル参考
+- [gitmoji.dev](https://gitmoji.dev/) のグリッドレイアウトを参考
 
-```bash
-# npm
-npm run build
+## 5. パフォーマンス要件
 
-# pnpm
-pnpm build
+- **画像最適化**: 自動画像最適化機能の実装
+- **ビルド方式**: 静的サイト生成（SSG）推奨
 
-# yarn
-yarn build
+## 6. 非機能要件
 
-# bun
-bun run build
-```
+### 対象外の機能
+- SEO対策（OGP、メタディスクリプション等）
+- ユーザー認証システム
+- コメント機能
+- アナリティクス
 
-Locally preview production build:
+## 7. コンテンツ管理
 
-```bash
-# npm
-npm run preview
+- Markdownファイルの直接編集
+- GitHub Actions 経由でのデプロイ
 
-# pnpm
-pnpm preview
+## 8. データ保存
 
-# yarn
-yarn preview
+### クライアントサイド
+- **お気に入り**: Cookie（記事IDの配列を保存）
 
-# bun
-bun run preview
-```
+### サーバーサイド
+- **記事データ**: Markdownファイル（Git管理）
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 9. リリース目標
+
+初期バージョンは最小限の機能でリリースし、段階的に機能を追加する方針
