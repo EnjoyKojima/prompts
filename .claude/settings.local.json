@@ -3,7 +3,11 @@
     "allow": [
       "Bash(test:*)",
       "Bash(cat:*)",
-      "Bash(pnpm lint:*)"
+      "Bash(pnpm lint:*)",
+      "Bash(rm:*)",
+      "Bash(pnpm install:*)",
+      "Bash(npm rebuild:*)",
+      "Bash(pnpm add:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,20 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "prompts",
+  "main": "./.output/server/index.mjs",
+	"compatibility_date": "2025-08-22",
+	"observability": {
+		"enabled": true
+	},
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "prompts",
+      "database_id": "42b8f522-7b53-4a21-b573-0f2b9fd4367e"
+    }
+  ]
+}

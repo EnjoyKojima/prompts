@@ -8,14 +8,14 @@ export default withNuxt({
     'vue/multi-word-component-names': 'off',
     'vue/padding-line-between-blocks': ['error', 'always'],
     'vue/block-tag-newline': ['error', {
-      'singleline': 'always',
-      'multiline': 'always',
-      'maxEmptyLines': 0
+      singleline: 'always',
+      multiline: 'always',
+      maxEmptyLines: 0,
     }],
     'vue/html-indent': ['error', 2],
     'vue/multiline-html-element-content-newline': ['error', {
-      'ignoreWhenEmpty': true,
-      'allowEmptyLines': false
-    }]
-  }
+      ignoreWhenEmpty: true,
+      allowEmptyLines: false,
+    }],
+  },
 })
